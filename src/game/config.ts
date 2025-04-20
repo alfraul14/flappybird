@@ -37,7 +37,7 @@ const initScenes = (): Phaser.Scene[] => {
     .map(scene => new scene.Class(SHARED_CONFIG))
 }
 
-const config = {
+const config: Phaser.Types.Core.GameConfig & { pixelArt: boolean } = {
   type: Phaser.AUTO,
   ...SHARED_CONFIG,
   parent: 'game-container',
@@ -47,7 +47,7 @@ const config = {
     default: 'arcade',
     arcade: {
       // gravity: { y: 0 },
-      debug: true
+      debug: false
     }
   },
   scene: initScenes()
